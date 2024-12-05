@@ -1,0 +1,303 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #e0dff6;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* Weather form styling */
+.weather-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: fit-content;
+  margin-bottom: 20px;
+}
+
+/* Row with inputs and buttons */
+.input-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.input-row input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  color: #5a3e85;
+  background: rgba(231, 218, 250, 0.39);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.2px);
+  -webkit-backdrop-filter: blur(6.2px);
+  border: 1px solid rgba(231, 218, 250, 0.3);
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.input-row input:focus {
+  border-color: #8a6faa;
+  box-shadow: 0 0 5px rgba(90, 62, 133, 0.3);
+}
+
+.input-row button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Search button styling */
+.input-row button[type="submit"] {
+  background-color: #5a3e85;
+}
+
+/* Clear button styling */
+.input-row button[type="button"] {
+  background-color: #5a3e85;
+}
+
+/* Loading and error messages */
+.loading-message {
+  color: #5a3e85;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: #ff4a4a;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Weather card styling */
+.weather-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 50px;
+  background: rgba(231, 218, 250, 0.39);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.2px);
+  -webkit-backdrop-filter: blur(6.2px);
+  border: 1px solid rgba(231, 218, 250, 0.3);
+}
+
+/* Row for temperature and icon */
+.temperature-icon-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.history-list {
+  list-style: none;
+  padding: 5px;
+  margin: 5px;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f1e7ff;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.history-item span {
+  font-size: 14px;
+  color: #5a3e85;
+}
+
+/* Button styling for history actions */
+.history-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover {
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.delete-button {
+  color: #f44336;
+}
+
+.delete-button:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+}
+
+/* History card styling */
+.history-card {
+  width: 100%;
+  padding: 0px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background: rgba(231, 218, 250, 0.39);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #5a3e85;
+}
+
+.history-card h2 {
+  font-size: 16px;
+  color: #5a3e85;
+  margin-left: 10px;
+  padding-left: 5px;
+}
+
+.history-card p {
+  margin-left: 10px;
+  padding-left: 5px;
+}
+
+.history-city-country {
+  font-size: 14px;
+  color: #5a3e85;
+  font-weight: bold;
+}
+
+.history-timestamp {
+  font-size: 12px;
+  color: #7a5ea7;
+}
+
+.history-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Temperature section styling */
+.temperature-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  padding-left: 10px;
+}
+
+.temperature-section h1 {
+  font-size: 100px;
+  margin: 0px;
+  color: #5a3e85;
+}
+
+.temperature-section p {
+  margin: 0px;
+  font-size: 18px;
+  color: #000000;
+}
+
+/* Icon section styling */
+.icon-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-top: -150px;
+}
+
+.icon-section img {
+  width: 300px;
+  height: 300px;
+}
+
+/* Info row styling for location, humidity, and description */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.info-row p {
+  flex: 1;
+  text-align: center;
+  font-size: 16px;
+  color: #6f5d9d;
+}
+
+@media (max-width: 768px) {
+  p {
+    font-size: 12px;
+  }
+  .weather-card,
+  .history-card {
+    max-width: 90%;
+  }
+
+  .input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    float: left;
+    padding: 0%;
+  }
+
+  .input-row input {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .input-row button {
+    box-sizing: border-box;
+  }
+
+  .info-row {
+    flex-direction: column-reverse;
+    align-items: end;
+    margin-top: -75px;
+    padding-bottom: 15px;
+  }
+
+  .info-row p {
+    margin: 0px;
+  }
+
+  .temperature-section h1 {
+    font-size: 40px;
+  }
+
+  .icon-section img {
+    width: 180px;
+    height: 180px;
+    margin-right: -30px;
+  }
+}
